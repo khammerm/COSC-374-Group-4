@@ -1,0 +1,44 @@
+[33mcommit 6b72c5c70734583a83498ac0a4a23e217eabaf02[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: abe8b52 5ee57d0
+Author: khammerm <khammerm@emich.edu>
+Date:   Thu Oct 20 17:24:57 2022 -0400
+
+    Merge branch 'main' of https://github.com/khammerm/COSC-374-Group-4
+
+[33mcommit abe8b525fdbae868d23bbf58a859f22470b8c2ae[m
+Author: khammerm <khammerm@emich.edu>
+Date:   Thu Oct 20 17:24:37 2022 -0400
+
+    Added a few more metrics, tweaked swing GUI
+
+[33mcommit 5ee57d05ee10004874a844e9df1de68f17afcf9e[m
+Author: khammerm <89815914+khammerm@users.noreply.github.com>
+Date:   Tue Oct 18 18:44:55 2022 -0400
+
+    update readme
+
+[33mcommit 028ee3b3d3a52e6c7f9199a5f25ffd70088f0443[m
+Author: khammerm <89815914+khammerm@users.noreply.github.com>
+Date:   Tue Oct 18 18:43:50 2022 -0400
+
+    update readme again
+
+[33mcommit 1c80e240d6dd90b2856956adfd6b190b98a7a712[m
+Author: khammerm <89815914+khammerm@users.noreply.github.com>
+Date:   Tue Oct 18 18:43:27 2022 -0400
+
+    Updated README.md
+    
+    Added project description and group members.
+
+[33mcommit c7456a35aaa0cabaeedbb71807529e4b6aa73d7a[m
+Author: khammerm <khammerm@emich.edu>
+Date:   Tue Oct 18 18:40:28 2022 -0400
+
+    First Commit
+
+[33mcommit 801728c2d4e00a9db85ce202db68abcf694a316c[m
+Author: khammerm <89815914+khammerm@users.noreply.github.com>
+Date:   Tue Oct 18 18:37:49 2022 -0400
+
+    Initial commit
