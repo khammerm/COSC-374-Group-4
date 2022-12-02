@@ -10,10 +10,10 @@ public class GUI implements ActionListener{
     protected int hr;
     
     // int arr for BP, ex [120][80];
-    private int[] bp = new int[2];
+    private String[] bp = new String[2];
 
     // float arr for latitude/longitude
-    private String gps;
+    private String[] gps = new String[2];
 
     private String pw = "temp";
     // fingerprint, retina scan, touchpad etc.,
@@ -25,10 +25,14 @@ public class GUI implements ActionListener{
     public GUI() {
         // basic GUI layout
         // initialize our frame/panel
+        CardLayout layout = new CardLayout();
+
         JFrame frame = new JFrame();
+
         JPanel infoPanel = new JPanel();
         JPanel authPanel = new JPanel();
-
+        JPanel authentic = new JPanel();
+        
         JButton button = new JButton("Authenticate");
         
         JTextField hrField = new JTextField();
@@ -44,11 +48,14 @@ public class GUI implements ActionListener{
         infoPanel.setBorder(BorderFactory.createEmptyBorder(0, 150, 120, 150));
         authPanel.setBorder(BorderFactory.createEmptyBorder(20, 150, 0, 150));
 
-        authPanel.setLayout(new GridLayout(0,1));
         infoPanel.setLayout(new GridLayout(0, 1));
+        authPanel.setLayout(new GridLayout(0,1));
+        authentic.setLayout(new GridLayout(0,1));
         //hrLabel.setBounds(250, 250, 20, 20)
-        authPanel.setBackground(Color.CYAN);
+        
+        authentic.setBackground(Color.RED);
         infoPanel.setBackground(Color.LIGHT_GRAY);
+        authPanel.setBackground(Color.CYAN);
 
         //hrLabel.setHorizontalAlignment(0);
 
@@ -57,28 +64,56 @@ public class GUI implements ActionListener{
             {
                 // just started working on grabbing value from textFields.
                 public void actionPerformed(ActionEvent e) {
+                    // HR Field
                     hr = Integer.valueOf(hrField.getText());
                     if(hr >= 140 || hr <= 90)
                     {
                         auth[0] = false;
-                        //System.out.println(auth[0]);
+                        System.out.println(auth[0]);
                     }else
                     {
                         auth[0] = true;
-                        //System.out.println(auth[0]);
+                        System.out.println(auth[0]);
                     }
-                    gps = gpsField.getText().trim();
-                    if(gps != "42.2507/83.6241")
+                    // GPS Field
+                    gps = gpsField.getText().split("/");
+                    double lat = Double.parseDouble(gps[0]);
+                    double lng = Double.parseDouble(gps[1]);
+
+                    if(lat != 42.2507 && lng != 83.6241)
                     {
                         auth[1] = false;
                         System.out.println(auth[1]);
-                        System.out.println(gps);
                     }else{
                         auth[1] = true;
                         System.out.println(auth[1]);
-                        System.out.println(gps);
                     }
-                    
+
+                    // BP Field
+                    bp = bpField.getText().split("/");
+                    int over = Integer.parseInt(bp[0]);
+                    int under = Integer.parseInt(bp[1]);
+                    if(over != 120 && under != 80)
+                    {
+                        auth[2] = false;
+                        System.out.println(auth[2]);
+            
+                    }else
+                    {
+                        auth[2] = true;
+                        System.out.println(auth[2]);
+                    }
+                    // PW FIELD
+                    pw = pwField.getText();
+                    if(pw != "password")
+                    {
+                        auth[3] = false;
+                        System.out.println(auth[2]);
+                    }else
+                    {
+                        auth[3] = true;
+                        System.out.println(auth[2]);
+                    }
                 }
             }
         );
