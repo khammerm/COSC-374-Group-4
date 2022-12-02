@@ -13,7 +13,7 @@ public class GUI implements ActionListener{
     private int[] bp = new int[2];
 
     // float arr for latitude/longitude
-    private float[] gps = new float[3];
+    private String gps;
 
     private String pw = "temp";
     // fingerprint, retina scan, touchpad etc.,
@@ -52,6 +52,7 @@ public class GUI implements ActionListener{
 
         //hrLabel.setHorizontalAlignment(0);
 
+        // action listener to grab vals from textFields.
         button.addActionListener(new ActionListener()
             {
                 // just started working on grabbing value from textFields.
@@ -60,7 +61,24 @@ public class GUI implements ActionListener{
                     if(hr >= 140 || hr <= 90)
                     {
                         auth[0] = false;
+                        //System.out.println(auth[0]);
+                    }else
+                    {
+                        auth[0] = true;
+                        //System.out.println(auth[0]);
                     }
+                    gps = gpsField.getText().trim();
+                    if(gps != "42.2507/83.6241")
+                    {
+                        auth[1] = false;
+                        System.out.println(auth[1]);
+                        System.out.println(gps);
+                    }else{
+                        auth[1] = true;
+                        System.out.println(auth[1]);
+                        System.out.println(gps);
+                    }
+                    
                 }
             }
         );
